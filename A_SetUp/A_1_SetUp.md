@@ -59,7 +59,7 @@ $ echo 1 >> /var/lib/zookeeper/myid # 서버별로 1, 2, 3을 부여한다.
 $ bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
 ~~~
  
-이왕 ZooKeeper를 시작헀으니, [tutorial](A_2_ZooKeeper-tutorial.md)을 해보는 것도 좋을 것 같다.
+이왕 ZooKeeper를 시작헀으니, [tutorial](A_2_ZooKeeper-Tutorial.md)을 해보는 것도 좋을 것 같다.
 
 #### Broker Config
 브로커 설정의 필수 갑 세 가지는 `broker.id`, `log.dirs`, `zookeeper.connect`이다.
