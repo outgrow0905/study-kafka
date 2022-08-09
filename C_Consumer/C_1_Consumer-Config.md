@@ -51,4 +51,10 @@ public class MyConsumer {
 - `auto.offset.reset`: 컨슈머가 committed offset에 대한 정보가 없을 때, 어디서부터 정보를 받아올 지에 대한 설정이다. 
 혹은, 가지고 있는 offset의 값이 브로커에서는 이미 삭제(aged out)되어 없을 수도 있다. 디폴트는 `latest` 이다.
 - `enable.auto.commit`: 자동으로 브로커로 commit을 보낼지에 대한 설정이다. 주기는 `auto.commit.interval.ms` 으로 설정할 수 있다. 디폴트는 `true` 이다.
- 
+
+- `group.instance.id`: `Static Group Membership` 에서 사용한다(83p 참조). 디폴트는 `null` 이다.
+- `offsets.retention.minutes`: 브로커설정이지만 컨슈머와 밀접한 연관이 있는 설정이다. 컨슈머그룹이 유지된 채로 offset commit을 전송하면, 당연히 이 commit은 계속해서 보관된다.
+하지만, 컨슈머그룹이 비어지고 난 뒤에는, 이 설정의 시간이 지나면 이 저장정보는 지워진다. 그리고 완전히 새로운 컨슈머그룹이 등록되는 것처럼 작동한다. 디폴트는 7일 이다.
+[[참조 KIP-186]](https://cwiki.apache.org/confluence/display/KAFKA/KIP-186%3A+Increase+offsets+retention+default+to+7+days)
+
+
