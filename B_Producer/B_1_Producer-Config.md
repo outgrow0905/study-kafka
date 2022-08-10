@@ -51,7 +51,7 @@ public class MyProducer {
 ## Config Properties
 - `client.id`: 로깅할떄에 '`192.168.100.1`' 로 확인하는 것 보다는 `'email-service-1`'로 보는게 더 편할 것이다.
 - `acks`: 중요한 설정 중 하나이다. Producer가 메시지를 전송하면 Kafka는 디폴트로 마스터가 메시지를 받으면 성공했다고 반환한다. 이 값을 통해 몇개의 레플리카로 복제된 후에 성공반환을 받고싶은 지 설정할 수 있다.  
-그러나, 메시지가 produce되고 consume되는 end-to-end 의 관점으로 보았을 떄는 어떤 설정을 하든 동일하다. Kafka는 consistency를 유지하기 위해 메시지가 모든 레플리카에 복제되기 전까지는 consume할 수 없기 때문이다. (56p 참조)
+그러나, 메시지가 produce되고 consume되는 end-to-end 의 관점으로 보았을 떄는 어떤 설정을 하든 동일하다. Kafka는 consistency를 유지하기 위해 메시지가 모든 레플리카에 복제되기 전까지는 consume할 수 없기 때문이다. (56p, 145p 참조)
 
 ![config-1](img/config-1.png)
 
