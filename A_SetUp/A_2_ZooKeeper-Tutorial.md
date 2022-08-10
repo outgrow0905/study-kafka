@@ -32,7 +32,7 @@ $ get /zookeeper/config
 
 #### 데이터 생성
 ~~~
-$ set /test my_data
+$ create /test my_data
 $ get /test # 2번 서버에서 실행해서 확인해본다.
 ~~~
 ![zookeeper-tutorial-4](img/zookeeper-tutorial-4.png)
