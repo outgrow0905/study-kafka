@@ -49,8 +49,10 @@ public class MyConsumer {
 가이드에서는 더 낮추지는 않기를 권장한다. 브로커에 문제가 있다고 가정하고, 연결시도가 많이 들어온다면 브로커에게 점점 부담이 될 것이기 때문이다.
 
 - `auto.offset.reset`: 컨슈머가 committed offset에 대한 정보가 없을 때, 어디서부터 정보를 받아올 지에 대한 설정이다. 
-혹은, 가지고 있는 offset의 값이 브로커에서는 이미 삭제(aged out)되어 없을 수도 있다. 디폴트는 `latest` 이다.
+혹은, 가지고 있는 offset의 값이 브로커에서는 이미 삭제(aged out)되어 없을 수도 있다. `earliest, latest` 두 가지로 설정 가능하다. 디폴트는 `latest` 이다.
 - `enable.auto.commit`: 자동으로 브로커로 commit을 보낼지에 대한 설정이다. 주기는 `auto.commit.interval.ms` 으로 설정할 수 있다. 디폴트는 `true` 이다.
+consume이 끝나면 자동으로 전송한다. `enable.auto.commit=true` [설정의 로그를 자세히 살펴보자.](C_4_Consumer-Log.md)
+- `auto.commit.interval.ms`: async로 계속해서 보내기 때문에, 너무 주기를 빠르게 할 필요는 없다. 오히려 브로커에 부하를 줄 수 있다. 디폴트는 `5000` 이다.
 
 - `group.instance.id`: `Static Group Membership` 에서 사용한다(83p 참조). 디폴트는 `null` 이다.
 - `offsets.retention.minutes`: 브로커설정이지만 컨슈머와 밀접한 연관이 있는 설정이다. 컨슈머그룹이 유지된 채로 offset commit을 전송하면, 당연히 이 commit은 계속해서 보관된다.
