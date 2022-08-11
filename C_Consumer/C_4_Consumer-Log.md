@@ -43,7 +43,7 @@ Received FETCH response from node 1 for request with header RequestHeader(apiKey
 Node 1 sent a full fetch response that created a new incremental fetch session 21233317 with 1 response partition(s)
 ~~~
 
-#### `Fetcher` 가 찍은 로그이다. 이전 `NetworkClient`가 찍은 로그와 거의 비슷하다.
+#### - `Fetcher` 가 찍은 로그이다. 이전 `NetworkClient`가 찍은 로그와 거의 비슷하다.
 ~~~
 18:50:36.894 [pool-1-thread-1] DEBUG org.apache.kafka.clients.consumer.internals.Fetcher - 
 [Consumer clientId=consumer-my-group-id-1, groupId=my-group-id] 
